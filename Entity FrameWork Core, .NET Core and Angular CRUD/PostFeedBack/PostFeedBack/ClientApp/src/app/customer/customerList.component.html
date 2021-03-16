@@ -1,0 +1,54 @@
+<div style="margin:15px;">
+  <h5 class="page-header"> </h5>
+  <hr class="page-header-hr" />
+
+  <div class="card border-primary">
+    <div class="card-body">
+
+      <div class="row">
+        <div class="form-group mt-2 col-md-12">
+          <button class="btn btn-sm btn-primary" style="float: right" (click)="search();"><i class="fa fa-search"></i> {{'customer.Search' | translate}} </button>
+          <button class="btn btn-sm btn-primary" style="float: left" (click)="navigateToChildren();"><i class="fa fa-plus-circle"></i> Go to Children </button>
+          <!--<button class="btn btn-sm btn-primary" style="float: right; margin-right: 15px;" (click)="openModal(demoPickerTemplate);"> Open Modal </button>-->
+        </div>
+      </div>
+      <div class="row">
+
+        <kendo-grid [data]="gridView"
+                    [resizable]="true"
+                    [pageSize]="pageSize"
+                    [skip]="skip"
+                    [pageable]="true"
+                    (pageChange)="pageChange($event)"
+                    style="margin: 14px">
+
+          <kendo-grid-column field="firstName" title="First Name" width="100"></kendo-grid-column>
+          <kendo-grid-column field="lastName" title="Last Name" width="100"></kendo-grid-column>
+          <kendo-grid-column field="customerName" title="Full Name" width="100"></kendo-grid-column>
+          <kendo-grid-column field="mobileNo" title="Mobile" width="100"></kendo-grid-column>
+          <kendo-grid-column title="Creation Date" width="80">
+            <ng-template kendoGridCellTemplate let-dataItem>
+              {{dataItem.createdDate | date: 'dd MMM yyyy'}}
+            </ng-template>
+          </kendo-grid-column>
+          <kendo-grid-column title="Action" width="100">
+            <ng-template kendoGridCellTemplate let-dataItem>
+
+              <button class="btn btn-sm btn-primary" style="margin-right:15px;" (click)="onEditClick(dataItem.customerId)"> <i class="fa fa-pencil-square-o"></i> Edit</button>
+              <button class="btn btn-sm btn-danger" (click)="DeleteCustomer(dataItem.customerId)"><i class="fa fa-trash"></i> Delete</button>
+
+            </ng-template>
+          </kendo-grid-column>
+
+        </kendo-grid>
+
+      </div>
+
+      <ng-template #demoPickerTemplate>
+        <app-demo-picker (myOutput)="GetChildData($event)"></app-demo-picker>
+      </ng-template>
+
+    </div>
+  </div>
+
+</div>

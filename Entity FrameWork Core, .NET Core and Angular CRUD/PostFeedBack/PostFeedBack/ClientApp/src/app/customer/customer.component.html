@@ -1,0 +1,56 @@
+<div style="margin:15px;">
+  <h5 class="page-header"> </h5>
+  <hr class="page-header-hr" />
+
+  <div class="card border-primary">
+    <div class="card-body">
+
+      <div class="row">
+        <div class="form-group mt-2 col-md-12">
+
+          <button class="btn btn-sm btn-primary" style="float: right" (click)="navigateToParent();"><i class="fa fa-arrow-circle-left"></i> Back to Parent </button>
+
+        </div>
+      </div>
+
+      <form [formGroup]="customerFrom" #customerform="ngForm">
+        <div class="row">
+
+          <div class="form-group col-md-6">
+            <label for="firstName">First Name</label>
+            <input type="text" class="form-control input-group-sm" id="firstName" [(ngModel)]="customer.firstName" formControlName="fName" />
+          </div>
+
+          <div class="form-group col-md-6">
+            <label for="lastName">Last Name</label>
+            <input type="text" class="form-control input-group-sm" id="lastName" [(ngModel)]="customer.lastName" formControlName="lName" />
+          </div>
+
+        </div>
+
+        <div class="row">
+
+          <div class="form-group col-md-6">
+            <label for="mobileNo">Mobile No</label>
+            <input type="text" class="form-control input-group-sm" id="mobileNo" [(ngModel)]="customer.mobileNo" formControlName="mNo" />
+          </div>
+
+        </div>
+
+        <div class="row">
+          <div class="form-group mt-2 col-md-12">
+
+            <button class="btn btn-sm btn-primary" style="float: right" [disabled]="!customerFrom.valid" type="submit" (click)="Submit()"><i class="fa fa-floppy-o"></i> Submit </button>
+
+          </div>
+        </div>
+
+      </form>
+
+
+
+
+    </div>
+  </div>
+
+</div>

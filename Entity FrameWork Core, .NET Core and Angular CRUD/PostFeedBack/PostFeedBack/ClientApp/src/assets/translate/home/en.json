@@ -1,0 +1,13 @@
+{
+  "home": {
+    "Search": "Search",
+    "PostName": "Post Name",
+    "PostCreatorName": "Post Creator Name",
+    "PostCreationDate": "Post Creation Date",
+    "NumOfComments": "Num of Comments",
+    "CommentDescription": "Comment",
+    "CommentCreatorName": "Comment Creator Name",
+    "CommentCreationDate": "Comment Creation Date",
+    "LikeDislike": "Like & Dislike"
+  }
+}

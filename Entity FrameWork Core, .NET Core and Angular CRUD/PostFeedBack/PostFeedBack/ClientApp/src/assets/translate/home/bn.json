@@ -1,0 +1,13 @@
+{
+  "home": {
+    "Search": "অনুসন্ধান করুন",
+    "PostName": "পোস্টের নাম",
+    "PostCreatorName": "পোস্ট সৃষ্টিকারীর নাম",
+    "PostCreationDate": "পোস্ট তৈরির সময়",
+    "NumOfComments": "কমেন্ট সংখ্যা",
+    "CommentDescription": "কমেন্ট",
+    "CommentCreatorName": "কমেন্ট সৃষ্টিকারীর নাম",
+    "CommentCreationDate": "কমেন্ট তৈরির সময়",
+    "LikeDislike": "লাইক এবং ডিজলাইক"
+  }
+}
