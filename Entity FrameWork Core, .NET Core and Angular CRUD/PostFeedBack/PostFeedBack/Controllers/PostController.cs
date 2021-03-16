@@ -27,6 +27,33 @@ namespace MyDreamWebApp.Controllers
             this._context = context ?? throw new ArgumentNullException(nameof(context));
         }
 
+        [HttpPost]
+        [Route("GetTestHit")]
+        public IActionResult GetTestHit([FromBody] string searchText)
+        {
+            try
+            {
+                //var customers = _customerDataAccess.GetCustomers();
+                List<long> Ids = new List<long>();
+                int Min = 10000;
+                int Max = 99999;
+                int[] test2 = new int[5];
+                Random randNum = new Random();
+                for(int i = 1; i <= 500000; i++)
+                {
+                    Ids.Add(randNum.Next(Min, Max));
+                }
+                var temp = string.Join(",", Ids);
+                var length = temp.Length;
+                var tempbodyLength = searchText.Length;
+                return Ok(temp);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
         [HttpGet]
         [Authorize]
         [Route("GetAllPost")]
