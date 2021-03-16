@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using PostFeedBack.Models;
+using MyDreamWebApp.Models;
 
 namespace DynamicformHome.Controllers
 {

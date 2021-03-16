@@ -1,6 +1,13 @@
 {
   "customer": {
     "Search": "Search",
-    "text": ""
+    "FirstName": "First Name",
+    "LastName": "Last Name",
+    "FullName": "Full Name",
+    "Mobile": "Mobile",
+    "CreationDate": "Creation Date",
+    "Action": "Action",
+    "Edit": "Edit",
+    "Delete": "Delete"
   }
 }

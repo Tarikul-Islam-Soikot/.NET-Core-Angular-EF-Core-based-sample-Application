@@ -1,6 +1,6 @@
 using System;
 
-namespace PostFeedBack.Models
+namespace MyDreamWebApp.Models
 {
     public class WeatherForecast
     {

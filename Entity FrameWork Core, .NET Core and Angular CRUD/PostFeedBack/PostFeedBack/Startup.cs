@@ -17,7 +17,7 @@ using MyDreamWebApp.Services.Concrete;
 using MyDreamWebApp.DataAccessLayer.Interface;
 using MyDreamWebApp.DataAccessLayer.Concrete;
 
-namespace PostFeedBack
+namespace MyDreamWebApp
 {
     public class Startup
     {

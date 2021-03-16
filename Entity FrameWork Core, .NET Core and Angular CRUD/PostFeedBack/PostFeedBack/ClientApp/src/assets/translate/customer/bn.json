@@ -1,6 +1,13 @@
 {
   "customer": {
     "Search": "অনুসন্ধান করুন",
-    "text": ""
+    "FirstName": "নামের প্রথম অংশ",
+    "LastName": "নামের শেষ অংশ",
+    "FullName": "পূর্ণ নাম",
+    "Mobile": "মোবাইল",
+    "CreationDate": "তৈরির সময়",
+    "Action": "ক্রিয়া",
+    "Edit": "সম্পাদন করুন",
+    "Delete": "মুছুন"
   }
 }
