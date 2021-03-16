@@ -5,17 +5,17 @@ using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using PostFeebBack.Models;
+using MyDreamWebApp.Models;
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
-using PostFeebBack;
-using PostFeebBack.Services.Interface;
-using PostFeebBack.Services.Concrete;
-using PostFeebBack.DataAccessLayer.Interface;
-using PostFeebBack.DataAccessLayer.Concrete;
+using MyDreamWebApp;
+using MyDreamWebApp.Services.Interface;
+using MyDreamWebApp.Services.Concrete;
+using MyDreamWebApp.DataAccessLayer.Interface;
+using MyDreamWebApp.DataAccessLayer.Concrete;
 
 namespace PostFeedBack
 {

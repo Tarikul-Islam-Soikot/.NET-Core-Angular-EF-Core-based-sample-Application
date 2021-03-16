@@ -1,14 +1,14 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using PostFeebBack.Models;
-using PostFeebBack.Services.Interface;
+using MyDreamWebApp.Models;
+using MyDreamWebApp.Services.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace PostFeebBack.Controllers
+namespace MyDreamWebApp.Controllers
 {
     [Route("api/Token")]
     [ApiController]

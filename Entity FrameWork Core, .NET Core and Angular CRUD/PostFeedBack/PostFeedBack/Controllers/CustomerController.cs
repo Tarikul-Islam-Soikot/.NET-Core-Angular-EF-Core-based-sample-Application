@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using PostFeebBack.DataAccessLayer.Interface;
-using PostFeebBack.Models;
+using MyDreamWebApp.DataAccessLayer.Interface;
+using MyDreamWebApp.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace PostFeebBack.Controllers
+namespace MyDreamWebApp.Controllers
 {
     [Route("api/Customer")]
     [ApiController]

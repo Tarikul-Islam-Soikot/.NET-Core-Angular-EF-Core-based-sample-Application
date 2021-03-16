@@ -1,11 +1,11 @@
-﻿using PostFeebBack.DataAccessLayer.Interface;
-using PostFeebBack.Models;
+﻿using MyDreamWebApp.DataAccessLayer.Interface;
+using MyDreamWebApp.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace PostFeebBack.DataAccessLayer.Concrete
+namespace MyDreamWebApp.DataAccessLayer.Concrete
 {
     public class CustomerDA: ICustomerDA
     {

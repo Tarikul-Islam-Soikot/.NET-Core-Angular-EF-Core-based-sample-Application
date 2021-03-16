@@ -1,5 +1,5 @@
 ﻿using Microsoft.IdentityModel.Tokens;
-using PostFeebBack.Services.Interface;
+using MyDreamWebApp.Services.Interface;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
@@ -9,7 +9,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PostFeebBack.Services.Concrete
+namespace MyDreamWebApp.Services.Concrete
 {
     public class TokenService : ITokenService
     {

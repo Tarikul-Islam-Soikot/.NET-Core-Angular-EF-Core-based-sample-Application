@@ -4,7 +4,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
-namespace PostFeebBack.Services.Interface
+namespace MyDreamWebApp.Services.Interface
 {
     public interface ITokenService
     {

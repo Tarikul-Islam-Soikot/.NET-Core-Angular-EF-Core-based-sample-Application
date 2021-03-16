@@ -1,10 +1,10 @@
-﻿using PostFeebBack.Models;
+﻿using MyDreamWebApp.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace PostFeebBack.DataAccessLayer.Interface
+namespace MyDreamWebApp.DataAccessLayer.Interface
 {
     public interface ICustomerDA
     {

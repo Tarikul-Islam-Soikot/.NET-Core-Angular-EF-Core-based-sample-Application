@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace PostFeebBack.Migrations
+namespace MyDreamWebApp.Migrations
 {
     public partial class tblCustomer : Migration
     {

@@ -5,9 +5,9 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using PostFeebBack;
+using MyDreamWebApp;
 
-namespace PostFeebBack.Migrations
+namespace MyDreamWebApp.Migrations
 {
     [DbContext(typeof(UserContext))]
     [Migration("20210301060510_ModifiedColumnsModified")]
@@ -21,7 +21,7 @@ namespace PostFeebBack.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("PostFeebBack.Models.Customer", b =>
+            modelBuilder.Entity("MyDreamWebApp.Models.Customer", b =>
                 {
                     b.Property<long>("CustomerId")
                         .ValueGeneratedOnAdd()
@@ -63,7 +63,7 @@ namespace PostFeebBack.Migrations
                     b.ToTable("Customers");
                 });
 
-            modelBuilder.Entity("PostFeebBack.Models.LoginModel", b =>
+            modelBuilder.Entity("MyDreamWebApp.Models.LoginModel", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()

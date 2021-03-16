@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace PostFeebBack.Migrations
+namespace MyDreamWebApp.Migrations
 {
     public partial class AddTblPostAndTblComments : Migration
     {

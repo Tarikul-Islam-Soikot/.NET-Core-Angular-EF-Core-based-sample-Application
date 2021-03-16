@@ -9,10 +9,10 @@ using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Distributed;
 using Newtonsoft.Json;
-using PostFeebBack.Models;
+using MyDreamWebApp.Models;
 
 
-namespace PostFeebBack.Controllers
+namespace MyDreamWebApp.Controllers
 {
     [ApiController]
     [Route("api/Post")]
