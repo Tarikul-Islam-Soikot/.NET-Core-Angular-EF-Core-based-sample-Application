@@ -4,6 +4,7 @@ using MyDreamWebApp.DataAccessLayer.Interface;
 using MyDreamWebApp.Models;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -30,7 +31,11 @@ namespace MyDreamWebApp.Controllers
         public IActionResult Get()
         {
             try
-            {               
+            {
+                //string value = "dot net perls";
+                //string titleCase = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(value);
+                //Console.WriteLine(titleCase);
+
                 var customers = _customerDataAccess.GetCustomers();
                 return Ok(customers);
             }

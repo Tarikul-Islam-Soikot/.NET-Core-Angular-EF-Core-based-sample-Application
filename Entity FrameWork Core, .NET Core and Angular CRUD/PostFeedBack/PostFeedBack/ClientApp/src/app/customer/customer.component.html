@@ -13,12 +13,13 @@
         </div>
       </div>
 
-      <form [formGroup]="customerFrom" #customerform="ngForm">
+      <form [formGroup]="customerForm" #customerform="ngForm">
         <div class="row">
 
           <div class="form-group col-md-6">
             <label for="firstName">First Name</label>
             <input type="text" class="form-control input-group-sm" id="firstName" [(ngModel)]="customer.firstName" formControlName="fName" />
+            <label style="color: red" *ngIf="customerForm.controls['fName'].hasError('required')"> First Name is Required</label>
           </div>
 
           <div class="form-group col-md-6">
@@ -33,6 +34,9 @@
           <div class="form-group col-md-6">
             <label for="mobileNo">Mobile No</label>
             <input type="text" class="form-control input-group-sm" id="mobileNo" [(ngModel)]="customer.mobileNo" formControlName="mNo" />
+
+            <label style="color: red" *ngIf="customerForm.controls['mNo'].hasError('pattern')"> Invalid Mobile Number</label>
+            <label style="color: red" *ngIf="customerForm.controls['mNo'].hasError('required')"> Mobile No is Required</label> 
           </div>
 
         </div>
@@ -40,7 +44,7 @@
         <div class="row">
           <div class="form-group mt-2 col-md-12">
 
-            <button class="btn btn-sm btn-primary" style="float: right" [disabled]="!customerFrom.valid" type="submit" (click)="Submit()"><i class="fa fa-floppy-o"></i> Submit </button>
+            <button class="btn btn-sm btn-primary" style="float: right" [disabled]="!customerForm.valid" type="submit" (click)="Submit()"><i class="fa fa-floppy-o"></i> Submit </button>
 
           </div>
         </div>

@@ -44,7 +44,7 @@ export class CustomerComponent implements OnInit {
 
   public customer: Customer;
   //public postList: PostDto[];
-  customerFrom: FormGroup;
+  customerForm: FormGroup;
   usersByNames: temp1Dto[] = [];
   usersByLikes: temp2Dto[] = [];
 
@@ -128,10 +128,12 @@ export class CustomerComponent implements OnInit {
   }
 
   public createCustomerForm() {
-    this.customerFrom = this.fromBuilder.group({
+    this.customerForm = this.fromBuilder.group({
       fName: ['', Validators.required],
       lName: ['', Validators.required],
-      mNo: ['', Validators.required],
+      //mNo: ['', Validators.required, Validators.pattern(/^(?:88)?01(?:\d{9})$/)],
+      mNo: ['', [Validators.pattern(/^(?:88)?01(?:\d{9})$/), Validators.maxLength(13), Validators.required]],
+      
     })
   }
 
