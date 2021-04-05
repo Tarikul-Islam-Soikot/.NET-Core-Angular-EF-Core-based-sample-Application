@@ -2,6 +2,7 @@
 using Mailjet.Client.Resources;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using MyDreamWebApp.Models;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -20,15 +21,47 @@ namespace MyDreamWebApp.Controllers
 
         }
 
-        [HttpGet]
+        [HttpPost]
         [Route("SentMail")]
-        public void SentMail()
+        public void SentMail([FromBody] Email item)
         {
-            RunAsync().Wait();
+            var emailInformation = item;
+            RunAsync(item).Wait();
         }
 
-        static async Task RunAsync()
+        static async Task RunAsync(Email item)
         {
+            var jarray = new JArray
+                    {
+                        new JObject
+                        {
+                            {
+                                "Email", "md.tarikul@brainstation23.com"
+                            }
+                        },
+                        new JObject
+                        {
+                            {
+                                "Email", "tarikulsoikot@gmail.com"
+                            }
+                        },
+                    };
+
+            var receipents = item.To.Split(";");
+            var jarray1 = new JArray { };
+            foreach (var receipent in receipents)
+            {
+                var arr = new JObject
+                {
+                    {
+                        "Email", receipent.Trim()
+                    }
+                };
+                jarray1.Add(arr);
+            }
+
+            //throw new Exception("Testing");
+
             MailjetClient client = new MailjetClient("c6e75349704777adcf8aeae534ed4b51", "0255e9107d8a415a088be154f0218091");
             MailjetRequest request = new MailjetRequest
             {
@@ -39,16 +72,17 @@ namespace MyDreamWebApp.Controllers
                .Property(Send.Subject, "Your email flight plan!")
                .Property(Send.TextPart, "Dear passenger, welcome to Mailjet! May the delivery force be with you!")
                .Property(Send.HtmlPart, "<h3>Dear passenger, welcome to <a href=\"https://www.mailjet.com/\">Mailjet</a>!<br />May the delivery force be with you!")
-               .Property(Send.Recipients, 
-                    new JArray 
-                    {
-                        new JObject 
-                        {
-                            {
-                                "Email", "md.tarikul@brainstation23.com"
-                            }
-                        }
-                    });
+               .Property(Send.Recipients, jarray1);
+               //.Property(Send.Recipients,
+               //     new JArray
+               //     {
+               //         new JObject
+               //         {
+               //             {
+               //                 "Email", "md.tarikul@brainstation23.com"
+               //             }
+               //         }
+               //     });
             MailjetResponse response = await client.PostAsync(request);
             if (response.IsSuccessStatusCode)
             {

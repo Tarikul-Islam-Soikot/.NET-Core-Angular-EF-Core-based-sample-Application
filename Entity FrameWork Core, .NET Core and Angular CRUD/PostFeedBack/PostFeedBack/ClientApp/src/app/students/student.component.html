@@ -1,1 +1,59 @@
-<p>student works!</p>
+<div style="margin:15px;">
+  <h5 class="page-header"> Send Mail </h5>
+  <hr class="page-header-hr" />
+
+  <div class="card border-primary">
+    <div class="card-body">
+
+      <div class="row">
+        <div class="form-group col-md-12">
+          <label for="From"> From </label>
+          <input type="text" class="form-control input-group-sm" id="From" [(ngModel)]="email.from" readonly />
+          <!--<label style="color: red" *ngIf="customerForm.controls['fName'].hasError('required')"> First Name is Required</label>-->
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group col-md-12">
+          <label for="To"> To </label>
+          <input type="text" class="form-control input-group-sm" id="To" [(ngModel)]="email.to" />
+          <!--<label style="color: red" *ngIf="customerForm.controls['fName'].hasError('required')"> First Name is Required</label>-->
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group col-md-12">
+          <label for="Cc"> Cc </label>
+          <input type="text" class="form-control input-group-sm" id="Cc" [(ngModel)]="email.cc" />
+          <!--<label style="color: red" *ngIf="customerForm.controls['fName'].hasError('required')"> First Name is Required</label>-->
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group col-md-12">
+          <label for="Subject"> Subject </label>
+          <input type="text" class="form-control input-group-sm" id="Subject" [(ngModel)]="email.subject" />
+          <!--<label style="color: red" *ngIf="customerForm.controls['fName'].hasError('required')"> First Name is Required</label>-->
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group col-md-12">
+          <label for="body"> Body </label>
+          <textarea name="body" id="body" rows="4" style="min-width: 100%" [(ngModel)]="email.body"></textarea>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group mt-2 col-md-12">
+
+          <button class="btn btn-sm btn-primary" style="float: right" type="submit" (click)="Send()"><i class="fa fa-floppy-o"></i> Send </button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+

@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { StudentRoutingModule } from './student.routing.module';
 import { StudentListComponent } from './studentList.component';
 import { StudentComponent } from './student.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations:
@@ -14,6 +15,7 @@ import { StudentComponent } from './student.component';
   imports: [
     CommonModule,
     StudentRoutingModule,
+    FormsModule,
   ],
   exports: [
     RouterModule,
