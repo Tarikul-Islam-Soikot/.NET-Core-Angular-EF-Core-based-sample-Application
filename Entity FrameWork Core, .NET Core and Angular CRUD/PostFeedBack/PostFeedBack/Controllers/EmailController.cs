@@ -39,11 +39,16 @@ namespace MyDreamWebApp.Controllers
                .Property(Send.Subject, "Your email flight plan!")
                .Property(Send.TextPart, "Dear passenger, welcome to Mailjet! May the delivery force be with you!")
                .Property(Send.HtmlPart, "<h3>Dear passenger, welcome to <a href=\"https://www.mailjet.com/\">Mailjet</a>!<br />May the delivery force be with you!")
-               .Property(Send.Recipients, new JArray {
-                new JObject {
-                 {"Email", "md.tarikul@brainstation23.com"}
-                 }
-                   });
+               .Property(Send.Recipients, 
+                    new JArray 
+                    {
+                        new JObject 
+                        {
+                            {
+                                "Email", "md.tarikul@brainstation23.com"
+                            }
+                        }
+                    });
             MailjetResponse response = await client.PostAsync(request);
             if (response.IsSuccessStatusCode)
             {
