@@ -25,34 +25,7 @@ namespace MyDreamWebApp.Controllers
         {
             this.distributedCache = distributedCache;
             this._context = context ?? throw new ArgumentNullException(nameof(context));
-        }
-
-        [HttpPost]
-        [Route("GetTestHit")]
-        public IActionResult GetTestHit([FromBody] string searchText)
-        {
-            try
-            {
-                //var customers = _customerDataAccess.GetCustomers();
-                List<long> Ids = new List<long>();
-                int Min = 10000;
-                int Max = 99999;
-                int[] test2 = new int[5];
-                Random randNum = new Random();
-                for(int i = 1; i <= 500000; i++)
-                {
-                    Ids.Add(randNum.Next(Min, Max));
-                }
-                var temp = string.Join(",", Ids);
-                var length = temp.Length;
-                var tempbodyLength = searchText.Length;
-                return Ok(temp);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
-        }
+        }       
 
         [HttpGet]
         [Authorize]
@@ -336,6 +309,88 @@ namespace MyDreamWebApp.Controllers
 
             return comments;
 
+        }
+
+        [HttpPost]
+        [Route("GetTestHit")]
+        public IActionResult GetTestHit([FromBody] string searchText)
+        {
+            try
+            {
+                //var customers = _customerDataAccess.GetCustomers();
+                List<long> Ids = new List<long>();
+                int Min = 10000;
+                int Max = 99999;
+                int[] test2 = new int[5];
+                Random randNum = new Random();
+                for (int i = 1; i <= 500000; i++)
+                {
+                    Ids.Add(randNum.Next(Min, Max));
+                }
+                var temp = string.Join(",", Ids);
+                var length = temp.Length;
+                var tempbodyLength = searchText.Length;
+                return Ok(temp);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+
+        //[HttpGet]
+        //[Authorize]
+        //[Route("GetAllPost")]
+        //public async Task<IActionResult> GetAllPost()
+        //{
+        //    try
+        //    {
+        //        IQueryable<Post> item = _context.Posts.Include("Comments");
+        //        foreach (var post in _context.Posts.Include("Comments"))
+        //        {
+        //            Console.WriteLine(post.Comments.Count());
+        //        }
+
+        //        return Ok("test");
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return BadRequest(ex.Message);
+        //    }
+        //}
+
+        //[HttpGet]
+        //[Authorize]
+        //[Route("GetAllPost")]
+        //public async Task<IActionResult> GetAllPost()
+        //{
+        //    try
+        //    {
+        //        var postList = _context.Posts.Where(x => x.PostID == 1)
+        //            .Include(x => x.Comments)
+        //         .Select(p => new PostDto
+        //         {
+        //             PostID = p.PostID,
+        //             PostName = p.Name,
+        //             Comments = p.Comments,
+        //             NumOfComments = p.Comments.Count()
+        //         })
+        //        .FirstOrDefault();
+
+        //        //var (_, Name) = GetMultipleValue();
+        //        //var temp1 = Name;
+        //        return Ok(postList);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return BadRequest(ex.Message);
+        //    }
+        //}
+
+        public Tuple<int, string> GetMultipleValue()
+        {
+            return Tuple.Create(1, "Soikot");
         }
 
     }
