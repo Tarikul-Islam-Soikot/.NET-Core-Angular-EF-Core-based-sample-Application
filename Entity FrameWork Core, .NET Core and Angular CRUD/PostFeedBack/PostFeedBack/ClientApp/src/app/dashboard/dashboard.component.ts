@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { of, range, interval, forkJoin, merge, race, from } from 'rxjs';
-import { take, concat, count, reduce, groupBy, map, distinct, elementAt, filter, first, last, skip, toArray, defaultIfEmpty, every, find, findIndex, isEmpty } from 'rxjs/operators';
 import { ApiService } from '../app.api.service';
-import { NotificationService } from '../app.notification.service';
+import { SignalRService } from '../services/signal-r.service';
+
 
 @Component({
   selector: 'app-dashboard',
@@ -10,21 +9,35 @@ import { NotificationService } from '../app.notification.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-
+  public chartOptions: any = {
+    scaleShowVerticalLines: true,
+    responsive: true,
+    scales: {
+      yAxes: [{
+        ticks: {
+          beginAtZero: true
+        }
+      }]
+    }
+  };
+  public chartLabels: string[] = ['Real time data for the chart'];
+  public chartType: string = 'bar';
+  public chartLegend: boolean = true;
+  public colors: any[] = [{ backgroundColor: '#5491DA' }, { backgroundColor: '#E74C3C' }, { backgroundColor: '#82E0AA' }, { backgroundColor: '#E5E7E9' }]
   constructor(public apiService: ApiService,
-    public notificationService: NotificationService) { }
+              public signalRService: SignalRService  ) { }
 
   ngOnInit() {
-       //this.apiService.httpGet<any[]>('Customer/GetCustomers')
-       //  .subscribe(
-       //    (x) => { console.log(x); },
-       //   (error) => {
-       //     this.notificationService.showError(error);
-       //     console.log(error);
-       //   },
-       //   () => {
+    this.signalRService.startConnection();
+    this.signalRService.addTransferChartDataListener();
+    this.startHttpRequest();
+  }
 
-       //   });
+  startHttpRequest () {
+    this.apiService.httpGet('Chart')
+      .subscribe(res => {
+        console.log(res);
+      })
   }
 
 }

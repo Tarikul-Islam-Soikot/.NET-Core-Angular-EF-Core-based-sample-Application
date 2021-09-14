@@ -40,6 +40,7 @@
     <None Remove="ClientApp\src\app\basic.classes\email.ts" />
     <None Remove="ClientApp\src\app\customer\customer.ts" />
     <None Remove="ClientApp\src\app\home\Response.ts" />
+    <None Remove="ClientApp\src\app\Interfaces\ChartModel.ts" />
     <None Remove="ClientApp\src\app\language-translate\language-translate.module.ts" />
   </ItemGroup>
 
@@ -47,6 +48,11 @@
     <TypeScriptCompile Include="ClientApp\src\app\basic.classes\email.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\customer\customer.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\home\Response.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\Interfaces\ChartModel.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ClientApp\src\app\services\" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

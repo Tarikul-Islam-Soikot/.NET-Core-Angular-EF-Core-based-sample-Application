@@ -17,6 +17,7 @@ using MyDreamWebApp.Services.Concrete;
 using MyDreamWebApp.DataAccessLayer.Interface;
 using MyDreamWebApp.DataAccessLayer.Concrete;
 using MyDreamWebApp.Extensions;
+using MyDreamWebApp.HubConfig;
 
 namespace MyDreamWebApp
 {
@@ -76,6 +77,8 @@ namespace MyDreamWebApp
 
             services.AddTransient<ITokenService, TokenService>();
             services.AddTransient<ICustomerDA, CustomerDA>();
+
+            services.AddSignalR();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -113,6 +116,7 @@ namespace MyDreamWebApp
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller}/{action=Index}/{id?}");
+                endpoints.MapHub<ChartHub>("/chart");
             });
 
             app.UseSpa(spa =>

@@ -36,6 +36,7 @@ import { NavmenuService } from './nav-menu/nav-menu.service';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { MultiTranslateHttpLoader } from 'ngx-translate-multi-http-loader';
 import { NgxSpinnerModule } from "ngx-spinner";
+import { ChartsModule } from 'ng2-charts';
 
 export function tokenGetter() {
   return localStorage.getItem("jwt");
@@ -70,6 +71,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     GridModule,
     CommonModule,
     NgxSpinnerModule,
+    ChartsModule,
     //RouterModule.forRoot([
     //  { path: '', component: HomeComponent, pathMatch: 'full' },
     //  { path: 'counter', component: CounterComponent },
