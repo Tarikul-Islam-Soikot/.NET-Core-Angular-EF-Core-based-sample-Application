@@ -8,8 +8,8 @@ namespace MyDreamWebApp.Models
 {
     public class PostDto
     {
-        [Key]
-        public long Id { get; set; }
+        //[Key]
+        //public long Id { get; set; }
         public long PostID { get; set; }
         public string PostName { get; set; }
         public string PostCreatorName { get; set; }
@@ -19,8 +19,8 @@ namespace MyDreamWebApp.Models
     }
     public class CommentsDto
     {
-        [Key]
-        public long Id { get; set; }
+        //[Key]
+        //public long Id { get; set; }
         public long CommentID { get; set; }
         public string CommentDescription { get; set; }
         public string CommentCreatorName { get; set; }
